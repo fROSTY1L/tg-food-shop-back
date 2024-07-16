@@ -19,23 +19,18 @@ app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileupload({}))
 app.use('/api', router)
 
-
 app.use(errorHandler)
 
 const start = async () => {
     try {
-        
         await sequelize.authenticate()
-        
         await sequelize.sync()
 
-
-app.listen(PORT, "0.0.0.0", function () {
-    console.log('сервер начал работу')
-});
-
+        app.listen(PORT, "0.0.0.0", function () {
+            console.log('сервер начал работу')
+        });
     } catch (e) {
-
+        console.error('Ошибка при запуске сервера:', e)
     }
 }
 
