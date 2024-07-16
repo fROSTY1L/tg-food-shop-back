@@ -10,7 +10,7 @@ const fileupload = require('express-fileupload')
 const path = require('path')
 const methodOverride = require('method-override');
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5002
 
 const app = express()
 app.use(cors())
