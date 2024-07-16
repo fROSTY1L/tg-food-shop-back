@@ -29,7 +29,10 @@ const start = async () => {
         
         await sequelize.sync()
 
-        app.listen(PORT, () => console.log(`Сервер начал работу на порту - ${PORT}`))
+
+app.listen(PORT, "0.0.0.0", function () {
+    console.log('сервер начал работу')
+});
 
     } catch (e) {
 
