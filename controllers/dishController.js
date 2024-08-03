@@ -60,8 +60,8 @@ class dishController {
 
     async deleteOne(req, res, next){
         try{
-            const {id} = req.params
-            const deleted = await Dish.findOne({id})
+            const {name} = req.params
+            const deleted = await Dish.findOne({name})
             if (deleted) {
                 deleted.destroy()
                 return res.json({ message: 'Блюдо удалено' });
