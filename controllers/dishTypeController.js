@@ -6,9 +6,9 @@ class dishTypeController {
     async deleteOne(req, res, next){
         try{
             const {name} = req.params
-            const deleted = await DishType.findOne({name})
+            const deleted = await DishType.findOne({where: {name: name}})
             if (deleted) {
-                deleted.destroy()
+                await deleted.destroy()
                 return res.json({ message: 'Тип блюда удален' });
             } else {
                 return res.json({ message: 'Тип блюда не найден' });

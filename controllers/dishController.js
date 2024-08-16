@@ -37,7 +37,7 @@ class dishController {
         let offset = page * limit - limit 
         let dishes
         if (!dishTypeId) {
-            dishes = await Dish.findAll({limit, offset, attributes: ['id', 'name', 'price', 'img']})
+            dishes = await Dish.findAll({limit, offset, attributes: ['id', 'name', 'price', 'img', 'dishTypeId']})
         }
         else {
             dishes = await Dish.findAll({where: {dishTypeId}, limit, offset})
